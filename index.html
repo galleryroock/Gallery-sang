@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>گالری سنگ طبیعی | فروشگاه سنگ‌های طبیعی</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f7f4ef;color:#2d2925}
+header{background:#211d19;color:#fff;position:sticky;top:0;z-index:5}.nav{max-width:1100px;margin:auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px}.logo{font-size:21px;font-weight:bold}.logo span{color:#c7a56a}
+nav a{color:#fff;text-decoration:none;margin:0 8px;font-size:14px}.cart{background:#c7a56a;border:0;border-radius:22px;padding:9px 14px;cursor:pointer}
+.hero{max-width:1100px;margin:25px auto;padding:48px 25px;border-radius:25px;background:linear-gradient(135deg,#3b3027,#9a7950);color:#fff;display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:center}.hero h1{font-size:38px;margin:0 0 12px}.hero p{line-height:2;color:#f2ece4}.btn{display:inline-block;background:#fff;color:#382f27;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold}
+section{max-width:1100px;margin:35px auto;padding:0 18px}.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.title h2{margin:0}.chips button{border:1px solid #d6c6ae;background:#fff;border-radius:20px;padding:8px 13px;margin:3px;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #0000000d}.pic{height:180px;background:radial-gradient(circle at 35% 35%,#d9c09a,#8b6c4a 42%,#3c3027 75%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:52px}.card:nth-child(2) .pic{background:radial-gradient(circle,#e8d6ad,#98724f 45%,#29241f)}.card:nth-child(3) .pic{background:radial-gradient(circle,#b9b48e,#655a43 48%,#292722)}.card:nth-child(4) .pic{background:radial-gradient(circle,#d99e76,#77483d 45%,#28211e)}.info{padding:14px}.info h3{margin:0 0 7px;font-size:17px}.meta{font-size:12px;color:#777}.price{font-weight:bold;margin:10px 0;color:#8b6334}.add{width:100%;border:0;background:#2d2925;color:#fff;border-radius:12px;padding:10px;cursor:pointer}
+.about{background:#fff;border-radius:20px;padding:25px;line-height:2}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:#fff;padding:18px;border-radius:16px;text-align:center}.feature b{display:block;margin-bottom:6px}
+footer{background:#211d19;color:#ddd;padding:30px;text-align:center;margin-top:45px}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:10;align-items:center;justify-content:center}.box{background:#fff;width:min(92%,430px);border-radius:20px;padding:22px}.box input,.box textarea{width:100%;padding:11px;margin:7px 0;border:1px solid #ddd;border-radius:10px}.close{float:left;cursor:pointer}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:30px}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}nav{display:none}}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr}.pic{height:145px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">گالری <span>سنگ طبیعی</span></div><nav><a href="#home">خانه</a><a href="#products">محصولات</a><a href="#about">درباره ما</a><a href="#contact">تماس</a></nav><button class="cart" onclick="openCart()">🛒 سبد خرید (<span id="count">0</span>)</button></div></header>
+
+<main id="home">
+<div class="hero"><div><h1>زیبایی طبیعت، در دل سنگ</h1><p>مجموعه‌ای از سنگ‌های طبیعی، عقیق، شجر و نگین‌های خاص برای علاقه‌مندان به سنگ‌های زیبا و کمیاب.</p><a class="btn" href="#products">مشاهده محصولات</a></div><div style="font-size:110px;text-align:center">💎</div></div>
+
+<section id="products"><div class="title"><h2>محصولات منتخب</h2><div class="chips"><button onclick="filter('all')">همه</button><button onclick="filter('عقیق')">عقیق</button><button onclick="filter('شجر')">شجر</button><button onclick="filter('ژئود')">ژئود</button></div></div>
+<div class="grid" id="grid">
+<div class="card" data-cat="عقیق"><div class="pic">💎</div><div class="info"><h3>عقیق سلیمانی ژئوددار</h3><div class="meta">وزن: 120 گرم</div><div class="price">تماس برای قیمت</div><button class="add" onclick="add('عقیق سلیمانی ژئوددار')">افزودن به سبد</button></div></div>
+<div class="card" data-cat="شجر"><div class="pic">🪨</div><div class="info"><h3>سنگ شجر پاییزه</h3><div class="meta">نگین کلکسیونی</div><div class="price">تماس برای قیمت</div><button class="add" onclick="add('سنگ شجر پاییزه')">افزودن به سبد</button></div></div>
+<div class="card" data-cat="ژئود"><div class="pic">🔮</div><div class="info"><h3>ژئود عقیق طبیعی</h3><div class="meta">برش‌خورده و پرداخت‌شده</div><div class="price">تماس برای قیمت</div><button class="add" onclick="add('ژئود عقیق طبیعی')">افزودن به سبد</button></div></div>
+<div class="card" data-cat="عقیق"><div class="pic">💠</div><div class="info"><h3>عقیق هفت‌رنگ</h3><div class="meta">دسته کلیدی خاص</div><div class="price">تماس برای قیمت</div><button class="add" onclick="add('عقیق هفت‌رنگ')">افزودن به سبد</button></div></div>
+</div></section>
+
+<section><div class="features"><div class="feature">💎<b>سنگ طبیعی</b>انتخاب از میان سنگ‌های خاص</div><div class="feature">📦<b>ارسال مطمئن</b>بسته‌بندی مناسب محصولات</div><div class="feature">🤝<b>پشتیبانی</b>پاسخگویی قبل و بعد از خرید</div></div></section>
+
+<section><div class="about"><h2>خرید آسان</h2><p>برای هر محصول می‌توانید قیمت، وزن، ابعاد و تصاویر واقعی را اضافه کنید. سفارش‌ها از طریق فرم و واتساپ قابل پیگیری هستند.</p></div></section>
+<section id="about"><div class="about"><h2>درباره گالری سنگ طبیعی</h2><p>اینجا می‌توانید مجموعه‌ای از سنگ‌های طبیعی و نگین‌های خاص را مشاهده و برای خرید یا دریافت اطلاعات بیشتر با ما تماس بگیرید.</p></div></section>
+<section id="contact"><div class="about"><h2>تماس با ما</h2><p>برای استعلام قیمت و سفارش، اطلاعات تماس خودتان را ثبت کنید.</p><button class="add" onclick="openContact()">ثبت درخواست تماس</button></div></section>
+</main>
+
+<a id="wa" href="#" target="_blank" style="position:fixed;bottom:18px;left:18px;background:#25D366;color:white;text-decoration:none;padding:13px 18px;border-radius:30px;font-weight:bold;box-shadow:0 5px 18px #0003;z-index:8">💬 واتساپ</a>
+<footer>© 2026 گالری سنگ طبیعی — تمامی حقوق محفوظ است<br><small>برای سفارش سریع، روی دکمه واتساپ بزنید.</small></footer>
+
+<div class="modal" id="cart"><div class="box"><span class="close" onclick="closeCart()">✕</span><h2>سبد خرید</h2><div id="items">سبد خرید خالی است.</div><hr><button class="add" onclick="openContact()">ثبت سفارش / درخواست قیمت</button></div></div>
+<div class="modal" id="contact"><div class="box"><span class="close" onclick="closeContact()">✕</span><h2>درخواست سفارش</h2><input id="name" placeholder="نام شما"><input id="phone" placeholder="شماره تماس"><textarea id="note" rows="4" placeholder="توضیحات یا نام سنگ موردنظر"></textarea><button class="add" onclick="sendRequest()">ارسال درخواست</button></div></div>
+
+<script>
+const STORE_WHATSAPP = "YOUR_WHATSAPP_NUMBER";
+let cart=[];
+function add(n){cart.push(n);document.getElementById('count').textContent=cart.length;alert('به سبد خرید اضافه شد: '+n)}
+document.getElementById('wa').onclick=function(e){
+  if(STORE_WHATSAPP==="YOUR_WHATSAPP_NUMBER"){
+    e.preventDefault(); alert('شماره واتساپ فروشگاه هنوز وارد نشده است.');
+    return;
+  }
+  this.href='https://wa.me/'+STORE_WHATSAPP+'?text='+encodeURIComponent('سلام، درباره محصولات گالری سنگ طبیعی سوال دارم.');
+};
+function openCart(){document.getElementById('cart').style.display='flex';document.getElementById('items').innerHTML=cart.length?cart.map((x,i)=>`${i+1}. ${x}`).join('<br>'):'سبد خرید خالی است.'}
+function closeCart(){document.getElementById('cart').style.display='none'}
+function openContact(){closeCart();document.getElementById('contact').style.display='flex'}
+function closeContact(){document.getElementById('contact').style.display='none'}
+function sendRequest(){let n=document.getElementById('name').value,p=document.getElementById('phone').value;if(!n||!p){alert('لطفاً نام و شماره تماس را وارد کنید.');return}alert('درخواست شما ثبت شد. برای اتصال واقعی فرم به واتساپ/ایمیل، شماره تماس فروشگاه را در کد قرار دهید.');closeContact()}
+function filter(c){document.querySelectorAll('.card').forEach(x=>x.style.display=(c==='all'||x.dataset.cat===c)?'block':'none')}
+</script>
+</body></html>
